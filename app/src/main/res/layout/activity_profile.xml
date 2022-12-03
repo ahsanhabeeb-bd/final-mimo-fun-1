@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_bg" />
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/photo_round"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/add_photo2"
+                    app:civ_border_color="#ECF1F1"
+                    app:civ_border_width="2dp"
+
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bach"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/blue_batch_re"
+                android:visibility="invisible"
+
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/amarante"
+                    android:text="name"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/lable_back_4"
+                android:elevation="10dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="ID:"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    />
+
+                <TextView
+                    android:id="@+id/uid1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:paddingHorizontal="5dp"
+                    android:text="10000000"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/right_arrow"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="15dp"
+                />
+
+
+        </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+
+                >
+
+                <Button
+                    android:id="@+id/recharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="#00ffffff"
+                    android:drawableLeft="@drawable/diamond_in_profile"
+                    android:fontFamily="@font/amarante"
+                    android:text=" Recharge Diamonds"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:gravity="left"
+                    />
+
+                <Button
+                    android:id="@+id/coins"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/coin_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" Coins"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+
+                <Button
+                    android:id="@+id/streamer"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="#00ffffff"
+                    android:drawableLeft="@drawable/micro_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:fontFamily="@font/amarante"
+                    android:gravity="left"
+                    android:text=" Streamer Center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/user_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/star_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" User Level"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+                <Button
+                    android:id="@+id/friendly_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/like_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" Friendly Point"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+                <Button
+                    android:id="@+id/vip_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/crown_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" VIP Center"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    android:textStyle="bold"
+                    />
+                <Button
+                    android:id="@+id/mall"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/mall_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" Mall"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+                <Button
+                    android:id="@+id/family"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/familyinprofile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" Family"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+                <Button
+                    android:id="@+id/setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/setting_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" Setting"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+                <Button
+                    android:id="@+id/about"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/about_in_profile"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:text=" About"
+                    android:background="#00ffffff"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/amarante"
+                    android:textAllCaps="false"
+                    android:gravity="left"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

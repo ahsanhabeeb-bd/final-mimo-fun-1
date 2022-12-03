@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registration_mail_Activity"
+    android:orientation="vertical"
+    android:background="@drawable/re_bg_2"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:text="REGISTRATION"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:padding="30dp"
+            app:cardCornerRadius="40dp"
+            android:elevation="10dp"
+            android:background="@drawable/kasatom_linier"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:hint="email"
+                    android:textColorHint="@color/white"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mail_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/kasatom_linier"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/white"
+
+
+                        />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="40dp"
+                    android:hint="password"
+                    android:textColorHint="@color/white"
+
+                    app:passwordToggleEnabled="true"
+
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/kasatom_linier"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="Re password"
+                    android:textColorHint="@color/white"
+                    android:layout_marginTop="40dp"
+                    app:passwordToggleEnabled="true"
+
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/re_password_re"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/kasatom_linier"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/submit_re"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#20FFFFFF"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center_horizontal"
+        android:text="Submit"
+        android:textColor="#003300"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+
+</FrameLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelateActivity"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/home_top_bg_3"
+        >
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/related_id1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/audiowide"
+                android:text="Related"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <View
+                android:id="@+id/related_id_view1"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/related_under"
+                android:visibility="visible"
+                />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/hot_id1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/audiowide"
+                android:text="Hot"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+            <View
+                android:id="@+id/hot_id_view1"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/related_under"
+                android:visibility="invisible"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/scarse_id"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/serch_icon_1" />
+
+        <ImageView
+            android:id="@+id/live_id"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/live_icon_1"
+            android:visibility="visible"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is relate page"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+
+
+</LinearLayout>

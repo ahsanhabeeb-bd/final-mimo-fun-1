@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountActivity"
+    android:orientation="vertical">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Login ID  "
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:textColor="#333435"
+        android:layout_marginLeft="10dp"
+        />
+    <TextView
+        android:id="@+id/account_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Your login ID is "
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="10dp"
+        android:background="#CCBCE8"
+        />
+    <Button
+        android:id="@+id/changepw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change password"
+        android:backgroundTint="#883FF1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:lottie_rawRes="@raw/account_anim"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="20dp"
+
+        />
+
+
+</LinearLayout>

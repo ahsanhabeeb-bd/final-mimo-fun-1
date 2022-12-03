@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Forgate_pass_Activity"
+    android:orientation="vertical"
+    android:background="@drawable/for_bg1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:text="Forgot \nPassword"
+        android:textColor="#ffc2b3"
+        android:textSize="50sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:padding="30dp"
+            app:cardCornerRadius="40dp"
+            android:elevation="10dp"
+            android:backgroundTint="#05FFFFFF"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="60dp"
+                    android:hint="email"
+                    android:textColorHint="@color/white"
+
+
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/f_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/kasatom_linier"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textColorHint="@color/white"
+                        android:autofillHints="emailAddress"
+
+                        />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/f_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="60dp"
+                    android:layout_marginTop="60dp"
+                    android:backgroundTint="#20FFFFFF"
+                    android:text="Submit"
+                    android:gravity="center_horizontal"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/audiowide"
+                    android:textStyle="bold"
+                    android:textColor="#e6f2ff"
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

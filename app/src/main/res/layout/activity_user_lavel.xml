@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile_main_image_Activity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="this is user level"
+        android:textSize="30sp"
+        android:gravity="center"
+        />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        >
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="courent level"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/courent_level"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="123"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="target level"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/target_level"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="223"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="courent exp"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/courent_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="1230"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="target exp"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/target_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="12241242000"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="Diamond"
+            android:textSize="20dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="12241242000"
+            android:textSize="20dp" />
+
+    </GridLayout>
+    <LinearLayout
+
+
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:background="#EAF1F1"
+        >
+        <ImageView
+            android:id="@+id/gift_test"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gift_heard"
+
+            />
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="X100"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+
+
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:background="#EAF1F1"
+        >
+        <ImageView
+            android:id="@+id/gift_test2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/star_in_profile"
+
+            />
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="X5000"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

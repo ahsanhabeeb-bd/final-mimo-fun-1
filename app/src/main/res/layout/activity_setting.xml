@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile_main_image_Activity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textSize="30sp"
+        android:gravity="left"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:layout_marginVertical="10dp"
+        />
+
+
+    <Button
+        android:id="@+id/account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/account_logo"
+        android:drawableRight="@drawable/right_arrow"
+        android:text=" Account"
+        android:background="#00ffffff"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/amarante"
+        android:textAllCaps="false"
+        android:gravity="left"
+        />
+
+    <Button
+        android:id="@+id/privacy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:background="#00ffffff"
+        android:drawableLeft="@drawable/privacy_icon"
+        android:drawableRight="@drawable/right_arrow"
+        android:fontFamily="@font/amarante"
+        android:gravity="left"
+        android:text=" Privacy"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/share"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:background="#00ffffff"
+        android:drawableLeft="@drawable/share_icon"
+        android:drawableRight="@drawable/right_arrow"
+        android:fontFamily="@font/amarante"
+        android:gravity="left"
+        android:text=" Share"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/help_icon"
+        android:drawableRight="@drawable/right_arrow"
+        android:text=" Help"
+        android:background="#00ffffff"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/amarante"
+        android:textAllCaps="false"
+        android:gravity="left"
+        />
+
+    <Button
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:background="#00ffffff"
+        android:drawableLeft="@drawable/feedback_icon"
+        android:drawableRight="@drawable/right_arrow"
+        android:fontFamily="@font/amarante"
+        android:gravity="left"
+        android:text=" Feedback"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/logout_icon"
+
+        android:text=" Logout"
+        android:background="#00ffffff"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:fontFamily="@font/amarante"
+        android:textAllCaps="false"
+        android:gravity="left"
+        />
+
+
+</LinearLayout>
