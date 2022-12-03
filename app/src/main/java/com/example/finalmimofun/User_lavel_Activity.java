@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,13 +19,19 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class User_lavel_Activity extends AppCompatActivity {
 
-    private TextView courent_level,target_level,courent_exp,target_exp,diamond;
+    private TextView courent_level,courent_level2,target_level,courent_exp,target_exp,diamond,need_exp;
     private ImageView gift_test;
     private ImageView gift_test2;
+    private CircleImageView photo_round;
 
+
+    private ProgressBar progressbar;
 
 
 
@@ -43,12 +51,20 @@ public class User_lavel_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_user_lavel);
 
         courent_level=(TextView) findViewById(R.id.courent_level);
+        courent_level2=(TextView) findViewById(R.id.courent_level2);
         target_level=(TextView) findViewById(R.id.target_level);
         courent_exp=(TextView) findViewById(R.id.courent_exp);
         target_exp=(TextView) findViewById(R.id.target_exp);
         diamond=(TextView) findViewById(R.id.diamond);
+        need_exp=(TextView) findViewById(R.id.need_exp);
         gift_test=(ImageView) findViewById(R.id.gift_test);
         gift_test2=(ImageView) findViewById(R.id.gift_test2);
+
+        photo_round= (CircleImageView)findViewById(R.id.photo_round);
+
+        progressbar = (ProgressBar)findViewById(R.id.progressbar);
+
+
 
 
         auth= FirebaseAuth.getInstance();
@@ -65,10 +81,14 @@ public class User_lavel_Activity extends AppCompatActivity {
                 String target_level_00 = String.valueOf(snapshot.child("gift_send_target_level").getValue());
                 String courent_exp_00 = String.valueOf(snapshot.child("exp_courent_sendin").getValue());
                 String target_exp_00 = String.valueOf(snapshot.child("exp_targate_sendin").getValue());
-                String diamond_00 = String.valueOf(snapshot.child("diamond").getValue());
 
+                String diamond_00 = String.valueOf(snapshot.child("diamond").getValue());
+                String uid2n = String.valueOf(snapshot.child("picture").getValue());
+
+                Picasso.get().load(uid2n).into(photo_round);
 
                 courent_level.setText(courent_level_00);
+                courent_level2.setText(courent_level_00);
                 courent_exp.setText(courent_exp_00);
                 target_level.setText(target_level_00);
                 target_exp.setText(target_exp_00);
@@ -79,6 +99,10 @@ public class User_lavel_Activity extends AppCompatActivity {
                 int courent_exp_00_int = Integer.parseInt(courent_exp_00);
                 int target_exp_00_int = Integer.parseInt(target_exp_00);
 
+                String ned_exp_int = String.valueOf((target_exp_00_int - courent_exp_00_int));
+
+
+                need_exp.setText(ned_exp_int)  ;
 
                 if(courent_level_00_int == 1)
                 {
@@ -87,6 +111,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                     databaseReference.child("gift_send_target_level").setValue(2);
                     //databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int);
                     databaseReference.child("exp_targate_sendin").setValue(2000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
 
                     if (courent_exp_00_int == 2000 || courent_exp_00_int>2000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-2000);
@@ -99,6 +125,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(3);
                     databaseReference.child("exp_targate_sendin").setValue(3000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==3000 || courent_exp_00_int>3000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-3000);
                         databaseReference.child("gift_send_level").setValue(3);
@@ -110,6 +138,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(4);
                     databaseReference.child("exp_targate_sendin").setValue(4000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==4000 || courent_exp_00_int>4000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-4000);
                         databaseReference.child("gift_send_level").setValue(4);
@@ -121,6 +151,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(5);
                     databaseReference.child("exp_targate_sendin").setValue(5000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==5000 || courent_exp_00_int>5000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-5000);
                         databaseReference.child("gift_send_level").setValue(5);
@@ -131,6 +163,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(6);
                     databaseReference.child("exp_targate_sendin").setValue(10000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==10000 || courent_exp_00_int>10000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-10000);
                         databaseReference.child("gift_send_level").setValue(6);
@@ -141,6 +175,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(7);
                     databaseReference.child("exp_targate_sendin").setValue(15000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==15000 || courent_exp_00_int>15000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-15000);
                         databaseReference.child("gift_send_level").setValue(7);
@@ -151,6 +187,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(8);
                     databaseReference.child("exp_targate_sendin").setValue(20000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==20000 || courent_exp_00_int>20000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-20000);
                         databaseReference.child("gift_send_level").setValue(8);
@@ -162,6 +200,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(9);
                     databaseReference.child("exp_targate_sendin").setValue(25000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==25000 || courent_exp_00_int>25000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-25000);
                         databaseReference.child("gift_send_level").setValue(9);
@@ -173,6 +213,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(10);
                     databaseReference.child("exp_targate_sendin").setValue(30000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==30000 || courent_exp_00_int>30000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-30000);
                         databaseReference.child("gift_send_level").setValue(10);
@@ -184,6 +226,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(11);
                     databaseReference.child("exp_targate_sendin").setValue(35000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==35000 || courent_exp_00_int>35000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-35000);
                         databaseReference.child("gift_send_level").setValue(11);
@@ -195,6 +239,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(12);
                     databaseReference.child("exp_targate_sendin").setValue(40000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==40000 || courent_exp_00_int>40000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-40000);
                         databaseReference.child("gift_send_level").setValue(12);
@@ -206,6 +252,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(13);
                     databaseReference.child("exp_targate_sendin").setValue(45000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==45000 || courent_exp_00_int>45000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-45000);
                         databaseReference.child("gift_send_level").setValue(13);
@@ -217,6 +265,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(14);
                     databaseReference.child("exp_targate_sendin").setValue(50000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==50000 || courent_exp_00_int>50000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-50000);
                         databaseReference.child("gift_send_level").setValue(14);
@@ -228,6 +278,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(15);
                     databaseReference.child("exp_targate_sendin").setValue(60000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==60000 || courent_exp_00_int>60000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-60000);
                         databaseReference.child("gift_send_level").setValue(15);
@@ -239,6 +291,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(16);
                     databaseReference.child("exp_targate_sendin").setValue(70000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==70000 || courent_exp_00_int>70000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-70000);
                         databaseReference.child("gift_send_level").setValue(16);
@@ -250,6 +304,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(17);
                     databaseReference.child("exp_targate_sendin").setValue(80000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==80000 || courent_exp_00_int>80000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-80000);
                         databaseReference.child("gift_send_level").setValue(17);
@@ -261,6 +317,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(18);
                     databaseReference.child("exp_targate_sendin").setValue(90000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==90000 || courent_exp_00_int>90000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-90000);
                         databaseReference.child("gift_send_level").setValue(18);
@@ -272,6 +330,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(19);
                     databaseReference.child("exp_targate_sendin").setValue(100000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==100000 || courent_exp_00_int>100000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-100000);
                         databaseReference.child("gift_send_level").setValue(19);
@@ -283,6 +343,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(20);
                     databaseReference.child("exp_targate_sendin").setValue(120000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==120000 || courent_exp_00_int>120000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-120000);
                         databaseReference.child("gift_send_level").setValue(20);
@@ -294,6 +356,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(21);
                     databaseReference.child("exp_targate_sendin").setValue(140000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==140000 || courent_exp_00_int>140000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-140000);
                         databaseReference.child("gift_send_level").setValue(21);
@@ -305,6 +369,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(22);
                     databaseReference.child("exp_targate_sendin").setValue(160000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==160000 || courent_exp_00_int>160000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-160000);
                         databaseReference.child("gift_send_level").setValue(22);
@@ -316,6 +382,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(23);
                     databaseReference.child("exp_targate_sendin").setValue(180000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==180000 || courent_exp_00_int>180000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-180000);
                         databaseReference.child("gift_send_level").setValue(23);
@@ -327,6 +395,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(24);
                     databaseReference.child("exp_targate_sendin").setValue(200000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==200000 || courent_exp_00_int>200000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-200000);
                         databaseReference.child("gift_send_level").setValue(24);
@@ -338,6 +408,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(25);
                     databaseReference.child("exp_targate_sendin").setValue(220000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==220000 || courent_exp_00_int>220000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-220000);
                         databaseReference.child("gift_send_level").setValue(25);
@@ -349,6 +421,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(26);
                     databaseReference.child("exp_targate_sendin").setValue(240000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==240000 || courent_exp_00_int>240000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-240000);
                         databaseReference.child("gift_send_level").setValue(26);
@@ -360,6 +434,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(27);
                     databaseReference.child("exp_targate_sendin").setValue(260000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==260000 || courent_exp_00_int>260000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-260000);
                         databaseReference.child("gift_send_level").setValue(27);
@@ -371,6 +447,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(28);
                     databaseReference.child("exp_targate_sendin").setValue(280000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==280000 || courent_exp_00_int>280000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-280000);
                         databaseReference.child("gift_send_level").setValue(28);
@@ -382,6 +460,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(29);
                     databaseReference.child("exp_targate_sendin").setValue(300000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==300000 || courent_exp_00_int>300000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-300000);
                         databaseReference.child("gift_send_level").setValue(29);
@@ -393,6 +473,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(30);
                     databaseReference.child("exp_targate_sendin").setValue(320000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==320000 || courent_exp_00_int>320000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-320000);
                         databaseReference.child("gift_send_level").setValue(30);
@@ -404,6 +486,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(31);
                     databaseReference.child("exp_targate_sendin").setValue(340000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==340000 || courent_exp_00_int>340000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-340000);
                         databaseReference.child("gift_send_level").setValue(31);
@@ -415,6 +499,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(32);
                     databaseReference.child("exp_targate_sendin").setValue(360000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==360000 || courent_exp_00_int>360000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-360000);
                         databaseReference.child("gift_send_level").setValue(32);
@@ -426,6 +512,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(33);
                     databaseReference.child("exp_targate_sendin").setValue(400000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==400000 || courent_exp_00_int>400000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-400000);
                         databaseReference.child("gift_send_level").setValue(33);
@@ -436,6 +524,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(34);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(34);
@@ -447,6 +537,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(35);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(35);
@@ -458,6 +550,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(36);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(36);
@@ -469,6 +563,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(37);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(37);
@@ -480,6 +576,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(38);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(38);
@@ -491,6 +589,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(39);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(39);
@@ -501,6 +601,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(40);
                     databaseReference.child("exp_targate_sendin").setValue(450000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==450000 || courent_exp_00_int>450000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-450000);
                         databaseReference.child("gift_send_level").setValue(40);
@@ -512,6 +614,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(41);
                     databaseReference.child("exp_targate_sendin").setValue(500000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==500000 || courent_exp_00_int>500000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-500000);
                         databaseReference.child("gift_send_level").setValue(41);
@@ -523,6 +627,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(42);
                     databaseReference.child("exp_targate_sendin").setValue(500000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==500000 || courent_exp_00_int>500000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-500000);
                         databaseReference.child("gift_send_level").setValue(42);
@@ -534,6 +640,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(43);
                     databaseReference.child("exp_targate_sendin").setValue(500000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==500000 || courent_exp_00_int>500000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-500000);
                         databaseReference.child("gift_send_level").setValue(43);
@@ -545,6 +653,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(44);
                     databaseReference.child("exp_targate_sendin").setValue(500000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==500000 || courent_exp_00_int>500000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-500000);
                         databaseReference.child("gift_send_level").setValue(44);
@@ -556,6 +666,8 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(45);
                     databaseReference.child("exp_targate_sendin").setValue(500000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==500000 || courent_exp_00_int>500000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-500000);
                         databaseReference.child("gift_send_level").setValue(45);
@@ -567,17 +679,14 @@ public class User_lavel_Activity extends AppCompatActivity {
                 {
                     databaseReference.child("gift_send_target_level").setValue(46);
                     databaseReference.child("exp_targate_sendin").setValue(550000);
+                    progressbar.setProgress(courent_exp_00_int);
+                    progressbar.setMax(target_exp_00_int);
                     if (courent_exp_00_int ==550000 || courent_exp_00_int>550000){
                         databaseReference.child("exp_courent_sendin").setValue(courent_exp_00_int-550000);
                         databaseReference.child("gift_send_level").setValue(46);
 
                     }
                 }
-
-
-
-
-
 
             }
 
@@ -586,6 +695,8 @@ public class User_lavel_Activity extends AppCompatActivity {
 
             }
         });
+
+
 
         gift_test.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,13 +18,6 @@
         android:theme="@style/Theme.FinalMimoFun"
         tools:targetApi="31">
         <activity
-            android:name=".testagainagain"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ChangePasswordActivity"
             android:exported="false">
             <meta-data
