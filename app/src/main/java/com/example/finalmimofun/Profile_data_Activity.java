@@ -203,6 +203,9 @@ public class Profile_data_Activity extends AppCompatActivity
                                         map.put("id_number",random);
                                         map.put("gender",gen);
 
+                                        map.put("progress_mex",0);
+                                        map.put("progress_curant",0);
+
 
                                         map.put("name",""+name.getText().toString());
                                         map.put("age",""+age.getText().toString());

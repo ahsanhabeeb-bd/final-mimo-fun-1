@@ -8,13 +8,23 @@
     tools:context=".EditActivity"
     android:orientation="vertical"
     >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_margin="10dp"
-
+        android:layout_marginTop="30dp"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -37,6 +47,51 @@
 
 
     </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <ImageView
+        android:id="@+id/photomain1"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ladis6" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photo_round1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/ladis4"
+        app:civ_border_color="#ECF1F1"
+        app:civ_border_width="2dp"
+
+        />
+        <ImageView
+            android:id="@+id/edit_round_photo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/camera_edit"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="85dp"
+            />
+        <ImageView
+            android:id="@+id/edit_main_photo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/camera_edit"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            />
+    </FrameLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,9 +162,10 @@
         android:background="#DCD7D7"
         android:gravity="top|left"
         android:maxLength="300"
+        android:layout_marginBottom="30dp"
         />
 
-
-
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

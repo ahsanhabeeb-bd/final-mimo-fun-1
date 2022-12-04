@@ -82,6 +82,9 @@ public class User_lavel_Activity extends AppCompatActivity {
                 String courent_exp_00 = String.valueOf(snapshot.child("exp_courent_sendin").getValue());
                 String target_exp_00 = String.valueOf(snapshot.child("exp_targate_sendin").getValue());
 
+                String progress_curant_00 = String.valueOf(snapshot.child("progress_curant").getValue());
+
+
                 String diamond_00 = String.valueOf(snapshot.child("diamond").getValue());
                 String uid2n = String.valueOf(snapshot.child("picture").getValue());
 
@@ -92,12 +95,18 @@ public class User_lavel_Activity extends AppCompatActivity {
                 courent_exp.setText(courent_exp_00);
                 target_level.setText(target_level_00);
                 target_exp.setText(target_exp_00);
+
+
+
                 diamond.setText(diamond_00);
 
                 int courent_level_00_int = Integer.parseInt(courent_level_00);
                 int target_level_00_int = Integer.parseInt(target_level_00);
                 int courent_exp_00_int = Integer.parseInt(courent_exp_00);
                 int target_exp_00_int = Integer.parseInt(target_exp_00);
+
+                progressbar.setProgress(Integer.parseInt(progress_curant_00));
+                progressbar.setMax(Integer.parseInt(target_exp_00));
 
                 String ned_exp_int = String.valueOf((target_exp_00_int - courent_exp_00_int));
 

@@ -1,13 +1,19 @@
 package com.example.finalmimofun;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,11 +32,13 @@ public class EditActivity extends AppCompatActivity
     private EditText edit_bio;
     private Button save_data;
 
+
     private FirebaseAuth auth;
     private FirebaseUser user;
 
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,11 @@ public class EditActivity extends AppCompatActivity
         edit_age = (EditText) findViewById(R.id.edit_age);
         edit_bio = (EditText) findViewById(R.id.edit_bio);
         save_data = (Button) findViewById(R.id.save_data);
+
+
+
+
+
 
         auth= FirebaseAuth.getInstance();
         user =auth.getCurrentUser();
@@ -87,4 +100,5 @@ public class EditActivity extends AppCompatActivity
         });
 
     }
+
 }
