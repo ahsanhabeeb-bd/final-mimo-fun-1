@@ -8,12 +8,13 @@
     android:orientation="vertical"
     >
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/panda1"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="30dp"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/dimond_cat"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:lottie_rawRes="@raw/opening_panda"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/sign_phone"
