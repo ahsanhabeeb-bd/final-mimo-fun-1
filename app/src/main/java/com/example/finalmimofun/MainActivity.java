@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity
 
     private Button sign_phone;
     private Button sign_mail;
+    private TextView pilicy;
+
 
     private FirebaseAuth auth;
     private FirebaseUser user;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity
 
         sign_phone =findViewById(R.id.sign_phone);
         sign_mail =findViewById(R.id.sign_mail);
+        pilicy  =findViewById(R.id.pilicy);
+
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -51,6 +57,15 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this,Login_mail_Activity.class));
             }
         });
+
+        pilicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,PolicyActivity.class));
+            }
+        });
+
+
 
 
 
