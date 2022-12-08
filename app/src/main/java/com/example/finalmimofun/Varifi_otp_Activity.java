@@ -22,13 +22,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
 
 public class Varifi_otp_Activity extends AppCompatActivity {
 
-    private TextView tvMobile,tvResendBtn;
+    private TextView tvMobile,tvResendBtn,textView6;
     private EditText etC1,etC2,etC3,etC4,etC5,etC6;
     private Button btnVerify;
     private ProgressBar progressBarVerify;
@@ -50,6 +51,7 @@ public class Varifi_otp_Activity extends AppCompatActivity {
         etC4 = findViewById(R.id.etC4);
         etC5 = findViewById(R.id.etC5);
         etC6 = findViewById(R.id.etC6);
+        textView6 = findViewById(R.id.textView6);
         tvResendBtn = findViewById(R.id.tvResendBtn);
         btnVerify = findViewById(R.id.btnVerify);
         progressBarVerify = findViewById(R.id.progressBarVerify);
@@ -59,20 +61,24 @@ public class Varifi_otp_Activity extends AppCompatActivity {
         editTextInput();
 
         tvMobile.setText(String.format(
-                "+88-%s", getIntent().getStringExtra("phone")
+                getIntent().getStringExtra("phone")
         ));
 
+        textView6.setText(getIntent().getStringExtra("country"));
+
         verificationId = getIntent().getStringExtra("verificationId");
+
 
         tvResendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                etC1.setText("");
+
                 etC2.setText("");
                 etC3.setText("");
                 etC4.setText("");
                 etC5.setText("");
                 etC6.setText("");
+                etC1.setText("");
                 otpSend();
 
 
@@ -110,7 +116,14 @@ public class Varifi_otp_Activity extends AppCompatActivity {
                                         if (task.isSuccessful()) {
                                             progressBarVerify.setVisibility(View.VISIBLE);
                                             btnVerify.setVisibility(View.INVISIBLE);
-                                            Toast.makeText(Varifi_otp_Activity.this, "Welcome...", Toast.LENGTH_SHORT).show();
+                                           // Toast.makeText(Varifi_otp_Activity.this, "Welcome...", Toast.LENGTH_SHORT).show();
+                                          //  startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                                           // FirebaseAuth.getInstance().getCurrentUser()
+                                            startActivity(new Intent(Varifi_otp_Activity.this,Profile_data_Activity.class));
+
+
+
+
                                             progressBarVerify.setVisibility(View.INVISIBLE);
 
                                         } else {
@@ -223,6 +236,7 @@ public class Varifi_otp_Activity extends AppCompatActivity {
             @Override
             public void onVerificationCompleted(PhoneAuthCredential credential) {
 
+
             }
 
             @Override
@@ -239,14 +253,14 @@ public class Varifi_otp_Activity extends AppCompatActivity {
                 progressBarVerify.setVisibility(View.GONE);
                 tvResendBtn.setVisibility(View.VISIBLE);
                 Toast.makeText(Varifi_otp_Activity.this, "OTP is successfully send.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Varifi_otp_Activity.this,Varifi_otp_Activity.class));
+              //  startActivity(new Intent(Varifi_otp_Activity.this,Varifi_otp_Activity.class));
 
             }
         };
 
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber("+88" + tvMobile.getText().toString().trim())
+                        .setPhoneNumber(tvMobile.getText().toString().trim())
                         .setTimeout(60L, TimeUnit.SECONDS)
                         .setActivity(this)
                         .setCallbacks(mCallbacks)

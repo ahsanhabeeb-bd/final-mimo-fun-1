@@ -23,12 +23,7 @@
                 android:layout_height="wrap_content"
                 >
 
-                <ImageView
-                    android:id="@+id/photomain1"
-                    android:layout_width="match_parent"
-                    android:layout_height="330dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ladis6" />
+
 
                 <ImageView
                     android:id="@+id/edit"

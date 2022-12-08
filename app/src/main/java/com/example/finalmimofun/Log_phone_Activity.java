@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,13 +18,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.hbb20.CountryCodePicker;
 
 import java.util.concurrent.TimeUnit;
 
 public class Log_phone_Activity extends AppCompatActivity {
 
     private ImageView imageView;
-    private TextView textView,textView2,textView3,etPhone;
+    private TextView textView,textView2,etPhone;
+
+    private CountryCodePicker textView3;
     private Button btnSend;
     private ProgressBar progressBar;
 
@@ -47,13 +51,14 @@ public class Log_phone_Activity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (etPhone.getText().toString().trim().isEmpty()) {
                     Toast.makeText(Log_phone_Activity.this, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
-                } else if (etPhone.getText().toString().trim().length() != 11) {
-                    Toast.makeText(Log_phone_Activity.this, "Type valid Phone Number", Toast.LENGTH_SHORT).show();
+
                 } else {
                     otpSend();
                 }
@@ -61,7 +66,10 @@ public class Log_phone_Activity extends AppCompatActivity {
         });
     }
 
-    private void otpSend() {
+
+
+
+      private void otpSend() {
         progressBar.setVisibility(View.VISIBLE);
         btnSend.setVisibility(View.INVISIBLE);
 
@@ -84,17 +92,19 @@ public class Log_phone_Activity extends AppCompatActivity {
                                    @NonNull PhoneAuthProvider.ForceResendingToken token) {
                 progressBar.setVisibility(View.GONE);
                 btnSend.setVisibility(View.VISIBLE);
+                String etPhone1= textView3.getSelectedCountryCodeWithPlus() + etPhone.getText().toString();
                 Toast.makeText(Log_phone_Activity.this, "OTP is successfully send.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Log_phone_Activity.this, Varifi_otp_Activity.class);
-                intent.putExtra("phone", etPhone.getText().toString().trim());
+                intent.putExtra("phone", etPhone1);
                 intent.putExtra("verificationId", verificationId);
+                intent.putExtra("country",textView3.getSelectedCountryName());
                 startActivity(intent);
             }
         };
 
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber("+88" + etPhone.getText().toString().trim())
+                        .setPhoneNumber(textView3.getSelectedCountryCodeWithPlus() + etPhone.getText().toString().trim())
                         .setTimeout(60L, TimeUnit.SECONDS)
                         .setActivity(this)
                         .setCallbacks(mCallbacks)

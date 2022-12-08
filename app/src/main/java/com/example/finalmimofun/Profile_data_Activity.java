@@ -198,6 +198,7 @@ public class Profile_data_Activity extends AppCompatActivity
                                         HashMap<String,Object> map = new HashMap<>();
 
                                         map.put("email",user.getEmail());
+                                        map.put("phone",user.getPhoneNumber());
                                         map.put("bio","Here your bio");/// have to change location
 
                                         map.put("id_number",random);
