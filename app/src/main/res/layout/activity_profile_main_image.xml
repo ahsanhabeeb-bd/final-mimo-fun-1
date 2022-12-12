@@ -20,47 +20,52 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/photomain1"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:src="@drawable/ladis4"
+                    android:scaleType="fitXY"
+                    />
 
 
                 <ImageView
                     android:id="@+id/edit"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/edit_profile1"
                     android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
-                    />
+                    android:layout_marginRight="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/edit_profile1" />
+
                 <FrameLayout
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="30dp"
-                    >
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/photo_round1"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ladis4"
-                    app:civ_border_color="#ECF1F1"
-                    app:civ_border_width="2dp"
+                    android:layout_marginTop="30dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/photo_round1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ladis4"
+                        app:civ_border_color="#ECF1F1"
+                        app:civ_border_width="2dp"
 
 
+                        />
 
-                    />
-                <ImageView
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:src="@drawable/pngwing_1"
-                    android:layout_gravity="center"
-                    android:scaleType="fitXY"
-                    android:visibility="visible"
-                    />
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/pngwing_1"
+                        android:visibility="visible" />
                 </FrameLayout>
 
 
@@ -68,108 +73,98 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="name"
-                    android:textSize="30dp"
-                    android:textColor="#E30C0C"
-                    android:layout_marginTop="190dp"
-                    android:textStyle="bold"
                     android:layout_marginLeft="30dp"
-                    />
+                    android:layout_marginTop="190dp"
+                    android:text="name"
+                    android:textColor="#E30C0C"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="170dp"
                     android:layout_height="20dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="250dp"
                     android:layout_marginLeft="30dp"
-                    >
+                    android:layout_marginTop="250dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="50dp"
                         android:layout_height="20dp"
-                        android:orientation="horizontal"
                         android:background="@drawable/label_back_1"
-                        >
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:id="@+id/gender"
                             android:layout_width="20dp"
                             android:layout_height="15dp"
-                            android:src="@drawable/female_sign"
                             android:layout_gravity="center"
-                            />
+                            android:src="@drawable/female_sign" />
+
                         <TextView
                             android:id="@+id/age1"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="26"
                             android:layout_gravity="center"
-                            />
-
+                            android:text="26" />
 
 
                     </LinearLayout>
 
 
-
                     <LinearLayout
                         android:layout_width="50dp"
                         android:layout_height="20dp"
-                        android:orientation="horizontal"
-                        android:background="@drawable/label_back_3"
                         android:layout_marginLeft="5dp"
-                        >
+                        android:background="@drawable/label_back_3"
+                        android:orientation="horizontal">
 
                         <com.airbnb.lottie.LottieAnimationView
 
                             android:layout_width="20dp"
                             android:layout_height="15dp"
-                            app:lottie_rawRes="@raw/star_1_for_label"
+                            android:layout_gravity="center_vertical"
                             app:lottie_autoPlay="true"
                             app:lottie_loop="true"
-                            android:layout_gravity="center_vertical"
-                            />
+                            app:lottie_rawRes="@raw/star_1_for_label" />
+
                         <TextView
                             android:id="@+id/sending_level"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="10"
                             android:layout_gravity="center"
-                            />
+                            android:text="10" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="50dp"
                         android:layout_height="20dp"
-                        android:orientation="horizontal"
-                        android:background="@drawable/label_back_3"
                         android:layout_marginLeft="5dp"
-                        >
+                        android:background="@drawable/label_back_3"
+                        android:orientation="horizontal">
 
                         <com.airbnb.lottie.LottieAnimationView
 
                             android:layout_width="20dp"
                             android:layout_height="15dp"
-                            app:lottie_rawRes="@raw/heard_for_label"
+                            android:layout_gravity="center_vertical"
                             app:lottie_autoPlay="true"
                             app:lottie_loop="true"
-                            android:layout_gravity="center_vertical"
-                            />
+                            app:lottie_rawRes="@raw/heard_for_label" />
+
                         <TextView
                             android:id="@+id/recevinging_lavel"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:text="26"
                             android:layout_gravity="center"
-                            />
-
+                            android:text="26" />
 
 
                     </LinearLayout>
 
 
-
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
@@ -183,27 +178,26 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
                         android:text="ID:"
                         android:textColor="@color/white"
                         android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:gravity="center_vertical"
-                        android:layout_gravity="center_vertical"
-                        />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/uid1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
                         android:text="10000000"
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:paddingHorizontal="5dp"
 
                         />
 
@@ -211,6 +205,7 @@
 
 
             </FrameLayout>
+
             <TextView
                 android:id="@+id/bio"
                 android:layout_width="match_parent"
@@ -231,31 +226,22 @@
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resical"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+
+                android:layout_gravity="center_horizontal"
 
 
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:columnCount="4"
-                    >
+                >
 
 
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/ladis4"
-                        android:scaleType="fitStart"
-                        />
+            </androidx.recyclerview.widget.RecyclerView>
 
 
 
 
-
-
-                </GridLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -266,22 +252,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 />
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="4"
-                >
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/badge_top_1"
-                    />
 
 
-            </GridLayout>
 
 
 

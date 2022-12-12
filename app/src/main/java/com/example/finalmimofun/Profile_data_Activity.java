@@ -253,6 +253,34 @@ public class Profile_data_Activity extends AppCompatActivity
                                         map.put("kiss_3",0);
                                         map.put("carriage",0);//20
 
+                                        map.put("badge1",false);
+                                        map.put("badge2",false);
+                                        map.put("badge3",false);
+                                        map.put("badge4",false);
+                                        map.put("badge5",false);
+                                        map.put("badge6",false);
+                                        map.put("badge7",false);
+                                        map.put("badge8",false);
+                                        map.put("badge9",false);
+                                        map.put("badge10",false);
+                                        map.put("badge11",false);
+                                        map.put("badge12",false);
+                                        map.put("badge13",false);
+                                        map.put("badge14",false);
+                                        map.put("badge15",false);
+                                        map.put("badge16",false);
+                                        map.put("badge17",false);
+                                        map.put("badge18",false);
+                                        map.put("badge19",false);
+                                        map.put("badge20",false);
+                                        map.put("badge21",false);
+                                        map.put("badge22",false);
+                                        map.put("badge23",false);
+                                        map.put("badge24",false);
+                                        map.put("badge25",false);
+                                        map.put("badge26",false);
+                                        map.put("badge27",false);
+
                                         map.put("picture",uri.toString());
                                         //object finish
 
