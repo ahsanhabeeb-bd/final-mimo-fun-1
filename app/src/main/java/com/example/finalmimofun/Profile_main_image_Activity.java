@@ -32,14 +32,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Profile_main_image_Activity extends AppCompatActivity {
 
     private CircleImageView photo_round1;
-    private ImageView photomain1;
+    private ImageView photomain1;//work
     private TextView name;
     private TextView age1;
     private TextView recevinging_lavel;
     private TextView sending_level;
     private TextView uid1;
     private TextView bio;
-    private ImageView edit;
+    private ImageView edit;//work
     private ImageView gender;
 
 
@@ -98,7 +98,7 @@ public class Profile_main_image_Activity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 String picture= String.valueOf(snapshot.child("picture").getValue());
-                String photomain = String.valueOf(snapshot.child("picture").getValue());
+                String photomain = String.valueOf(snapshot.child("picturemain").getValue());
                 String name1 = String.valueOf(snapshot.child("name").getValue());
                 String age = String.valueOf(snapshot.child("age").getValue());
                 String recevinging_lavel1 = String.valueOf(snapshot.child("gift_received_level").getValue());
@@ -106,6 +106,7 @@ public class Profile_main_image_Activity extends AppCompatActivity {
                 String uid12 = String.valueOf(snapshot.child("id_number").getValue());
                 String bio1 = String.valueOf(snapshot.child("bio").getValue());
                 String gender1 = String.valueOf(snapshot.child("gender").getValue());
+
 
 
 
@@ -175,36 +176,87 @@ public class Profile_main_image_Activity extends AppCompatActivity {
                 Boolean badge26 = (Boolean) snapshot.child("badge26").getValue();
                 Boolean badge27 = (Boolean) snapshot.child("badge27").getValue();
 
-                if (badge1 == true){data.add(R.drawable.badge1);
-                    data1.add(R.drawable.ladis1);}
-                if (badge2 == true){data.add(R.drawable.badge2);}
-                if (badge3 == true){data.add(R.drawable.badge3);}
-                if (badge4 == true){data.add(R.drawable.badge4);}
-                if (badge5 == true){data.add(R.drawable.badge5);}
-                if (badge6 == true){data.add(R.drawable.badge6);}
-                if (badge7 == true){data.add(R.drawable.badge7);}
-                if (badge8 == true){data.add(R.drawable.badge8);}
-                if (badge9 == true){data.add(R.drawable.badge9);}
-                if (badge10 == true){data.add(R.drawable.badge10);}
-                if (badge11 == true){data.add(R.drawable.badge11);}
-                if (badge12 == true){data.add(R.drawable.badge12);}
-                if (badge13 == true){data.add(R.drawable.badge13);}
-                if (badge14 == true){data.add(R.drawable.badge14);}
-                if (badge15 == true){data.add(R.drawable.badge15);}
-                if (badge16 == true){data.add(R.drawable.badge16);}
-                if (badge17 == true){data.add(R.drawable.badge17);}
-                if (badge18 == true){data.add(R.drawable.badge18);}
-                if (badge19 == true){data.add(R.drawable.badge19);}
-                if (badge20 == true){data.add(R.drawable.badge20);}
-                if (badge21 == true){data.add(R.drawable.badge21);}
-                if (badge22 == true){data.add(R.drawable.badge22);}
-                if (badge23 == true){data.add(R.drawable.badge23);}
-                if (badge24 == true){data.add(R.drawable.badge24);}
-                if (badge25 == true){data.add(R.drawable.badge25);}
-                if (badge26 == true){data.add(R.drawable.badge26);}
-                if (badge27 == true){data.add(R.drawable.badge27);}
-
-
+                if (badge1.equals(true)){
+                    data.add(R.drawable.badge1);
+                    data1.add(R.drawable.popup1);}
+                if (badge2 == true)
+                    {data.add(R.drawable.badge2);
+                    data1.add(R.drawable.popup2);}
+                if (badge3 == true)
+                    {data.add(R.drawable.badge3);
+                    data1.add(R.drawable.popup3);}
+                if (badge4 == true)
+                    {data.add(R.drawable.badge4);
+                    data1.add(R.drawable.popup4);}
+                if (badge5 == true)
+                    {data.add(R.drawable.badge5);
+                    data1.add(R.drawable.popup5);}
+                if (badge6 == true)
+                    {data.add(R.drawable.badge6);
+                    data1.add(R.drawable.popup6);}
+                if (badge7 == true)
+                    {data.add(R.drawable.badge7);
+                    data1.add(R.drawable.popup7);}
+                if (badge8 == true)
+                    {data.add(R.drawable.badge8);
+                    data1.add(R.drawable.popup8);}
+                if (badge9 == true)
+                    {data.add(R.drawable.badge9);
+                    data1.add(R.drawable.popup9);}
+                if (badge10 == true)
+                    {data.add(R.drawable.badge10);
+                    data1.add(R.drawable.popup10);}
+                if (badge11 == true)
+                    {data.add(R.drawable.badge11);
+                    data1.add(R.drawable.popup11);}
+                if (badge12 == true)
+                    {data.add(R.drawable.badge12);
+                    data1.add(R.drawable.popup12);}
+                if (badge13 == true)
+                    {data.add(R.drawable.badge13);
+                    data1.add(R.drawable.popup13);}
+                if (badge14 == true)
+                    {data.add(R.drawable.badge14);
+                    data1.add(R.drawable.popup14);}
+                if (badge15 == true)
+                    {data.add(R.drawable.badge15);
+                    data1.add(R.drawable.popup15);}
+                if (badge16 == true)
+                    {data.add(R.drawable.badge16);
+                    data1.add(R.drawable.popup16);}
+                if (badge17 == true)
+                    {data.add(R.drawable.badge17);
+                    data1.add(R.drawable.popup17);}
+                if (badge18 == true)
+                    {data.add(R.drawable.badge18);
+                    data1.add(R.drawable.popup18);}
+                if (badge19 == true)
+                    {data.add(R.drawable.badge19);
+                    data1.add(R.drawable.popup19);}
+                if (badge20 == true)
+                    {data.add(R.drawable.badge20);
+                    data1.add(R.drawable.popup20);}
+                if (badge21 == true)
+                    {data.add(R.drawable.badge21);
+                    data1.add(R.drawable.popup21);}
+                if (badge22 == true)
+                    {data.add(R.drawable.badge22);
+                    data1.add(R.drawable.popup22);}
+                if (badge23 == true)
+                    {data.add(R.drawable.badge23);
+                    data1.add(R.drawable.popup23);}
+                if (badge24 == true)
+                    {data.add(R.drawable.badge24);
+                    data1.add(R.drawable.popup24);}
+                if (badge25 == true)
+                    {data.add(R.drawable.badge25);
+                    data1.add(R.drawable.popup25);}
+                if (badge26 == true)
+                    {data.add(R.drawable.badge26);
+                    data1.add(R.drawable.popup26);}
+                if (badge27 == true)
+                    {data.add(R.drawable.badge27);
+                    data1.add(R.drawable.popup27);}
             }
 
             @Override

@@ -1,5 +1,7 @@
 package com.example.finalmimofun;
 
+import static com.example.finalmimofun.R.id.diglogimage;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -37,8 +39,6 @@ public class badgeAdapter extends RecyclerView.Adapter<badgeAdapter.holder>
     @Override
     public void onBindViewHolder(@NonNull  holder holder, int position) {
 
-
-
         holder.img.setImageResource(data.get(position));
         
     }
@@ -66,6 +66,7 @@ public class badgeAdapter extends RecyclerView.Adapter<badgeAdapter.holder>
                 diglogimage.setImageResource(data1.get(getAbsoluteAdapterPosition()));
                 builder.setView(dialogview);
                 builder.setCancelable(true);
+
                 builder.show();
             }});
 

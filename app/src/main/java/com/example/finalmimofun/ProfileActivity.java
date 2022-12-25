@@ -81,12 +81,14 @@ public class ProfileActivity extends AppCompatActivity
                 String name = String.valueOf(snapshot.child("name").getValue());
                 String uid1n = String.valueOf(snapshot.child("id_number").getValue());
                 String uid2n = String.valueOf(snapshot.child("picture").getValue());
+                String uid3n = String.valueOf(snapshot.child("picturemain").getValue());
 
                 name1.setText(name);
                 uid1.setText(uid1n);
 
                // Uri uri =user.getPhotoUrl();
                 Picasso.get().load(uid2n).into(photo_round);
+                Picasso.get().load(uid3n).into(main_image);
             }
 
             @Override

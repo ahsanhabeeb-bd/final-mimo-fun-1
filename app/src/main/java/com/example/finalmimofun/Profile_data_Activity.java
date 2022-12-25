@@ -1,14 +1,6 @@
 package com.example.finalmimofun;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,6 +15,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -61,10 +59,11 @@ public class Profile_data_Activity extends AppCompatActivity
     final int min = 10000000;
     final int max = 99999999;
 
-    StorageReference uploader;
+    private StorageReference uploader;
 
-    Uri filepath;
-    Bitmap bitmap;
+
+    private Uri filepath;
+    private Bitmap bitmap;
 
 
     @Override
@@ -82,39 +81,20 @@ public class Profile_data_Activity extends AppCompatActivity
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-       // photo.setImageResource(R.drawable.add_photo2);
 
-       // photo.setImageDrawable(getResources().getDrawable(R.drawable.chat_icon_re));
-      // String photo_scr = photo.getTag().toString();
 
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dexter.withContext(Profile_data_Activity.this)
-                        .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .withListener(new PermissionListener() {
-                            @Override
-                            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse)
-                            {
-                                Intent intent =new Intent(Intent.ACTION_PICK);
-                                intent.setType("image/*");
-                                startActivityForResult(Intent.createChooser(intent,"seclect image file"),1);
-                            }
-
-                            @Override
-                            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse)
-                            {
-                                Toast.makeText(Profile_data_Activity.this, "Give Parmition", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken)
-                            {
-                                permissionToken.continuePermissionRequest();
-                            }
-                        }).check();
+                ImagePicker.with(Profile_data_Activity.this)
+                        .crop()//Crop image(Optional), Check Customization for more option
+                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                        .maxResultSize(620, 620)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .start(1);
             }
         });
+
+
         save_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -147,20 +127,19 @@ public class Profile_data_Activity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
-        if(requestCode==1 && resultCode==RESULT_OK)
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==1 && resultCode==RESULT_OK && data!=null)
         {
             filepath=data.getData();
             try {
                 InputStream inputStream =getContentResolver().openInputStream(filepath);
                 bitmap = BitmapFactory.decodeStream(inputStream);
                 photo.setImageBitmap(bitmap);
-            }catch (Exception ex)
-            {
+            }catch (Exception ex){
 
             }
         }
-        super.onActivityResult(requestCode, resultCode, data);
-
     }
 
 
@@ -192,6 +171,7 @@ public class Profile_data_Activity extends AppCompatActivity
                                         // make uid
 
                                         final int random = new Random().nextInt((max - min) + 1) + min;
+
 
 
                                         // have to make database object
