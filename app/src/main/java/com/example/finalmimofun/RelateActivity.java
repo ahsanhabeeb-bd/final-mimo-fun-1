@@ -60,8 +60,7 @@ public class RelateActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(RelateActivity.this,HomeActivity.class));
         super.onBackPressed();
-
-
     }
 }

@@ -5,22 +5,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScarceActivity"
+    tools:context=".HomeActivity"
     android:orientation="vertical"
     >
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        />
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is scarce page"
-        android:gravity="center"
-        android:textSize="30sp"
+        android:orientation="vertical"
+        android:layout_marginVertical="20dp"
+        android:background="#E2E8E8"
+        android:layout_marginHorizontal="10dp"
+        >
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            app:queryHint="Search ID ..."
+
+            />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+
         />
 
 </LinearLayout>

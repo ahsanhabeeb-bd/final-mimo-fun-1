@@ -9,12 +9,38 @@
     android:orientation="vertical"
     >
 
-    <TextView
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/roomname"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="This is live page"
-        android:gravity="center"
-        android:textSize="30sp"
+        android:hint="Room name"
+        android:layout_marginVertical="20dp"
+        android:layout_gravity="center_horizontal"
         />
+
+    <Button
+        android:id="@+id/start_live"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Start a live" />
+
+    <EditText
+        android:id="@+id/joinroom"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="room id"
+        android:layout_marginVertical="20dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/watch_live"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="Watch a live" />
 
 </LinearLayout>

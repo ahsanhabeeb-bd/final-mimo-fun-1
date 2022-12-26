@@ -37,6 +37,7 @@ public class Profile_main_image_Activity extends AppCompatActivity {
     private TextView age1;
     private TextView recevinging_lavel;
     private TextView sending_level;
+    private TextView position;
     private TextView uid1;
     private TextView bio;
     private ImageView edit;//work
@@ -67,6 +68,7 @@ public class Profile_main_image_Activity extends AppCompatActivity {
         photomain1 = (ImageView)findViewById(R.id.photomain1);
         name = (TextView)findViewById(R.id.name);
         age1 = (TextView)findViewById(R.id.age1);
+        position = (TextView)findViewById(R.id.position);
         recevinging_lavel = (TextView)findViewById(R.id.recevinging_lavel);
         sending_level = (TextView)findViewById(R.id.sending_level);
         uid1 = (TextView)findViewById(R.id.uid1);
@@ -109,6 +111,11 @@ public class Profile_main_image_Activity extends AppCompatActivity {
 
 
 
+                Boolean official = (Boolean) snapshot.child("official").getValue();
+                Boolean agency = (Boolean) snapshot.child("agency").getValue();
+                Boolean diamond_seller = (Boolean) snapshot.child("diamond_seller").getValue();
+                Boolean host = (Boolean) snapshot.child("host").getValue();
+
 
                 Picasso.get().load(picture).into(photo_round1);
                 Picasso.get().load(photomain).into(photomain1);
@@ -126,6 +133,25 @@ public class Profile_main_image_Activity extends AppCompatActivity {
                 {
                     Picasso.get().load(R.drawable.female_sign).into(gender);
                 }
+
+
+                if (official == true) {
+                    position.setVisibility(View.VISIBLE);
+                    position.setText("Official");
+
+                }else if (agency == true) {
+                    position.setVisibility(View.VISIBLE);
+                    position.setText("Agency");
+
+                }else if (diamond_seller == true) {
+                    position.setVisibility(View.VISIBLE);
+                    position.setText("D.Seller");
+
+                }else if (host == true) {
+                    position.setVisibility(View.VISIBLE);
+                    position.setText("Host");
+                }
+
 
             }
 
@@ -266,6 +292,12 @@ public class Profile_main_image_Activity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(Profile_main_image_Activity.this,ProfileActivity.class));
+        super.onBackPressed();
     }
 
 

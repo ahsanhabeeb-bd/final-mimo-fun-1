@@ -30,12 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.single.PermissionListener;
+
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -87,7 +82,8 @@ public class Profile_data_Activity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 ImagePicker.with(Profile_data_Activity.this)
-                        .crop()//Crop image(Optional), Check Customization for more option
+                        .crop()
+                        .cropSquare()//Crop image(Optional), Check Customization for more option
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
                         .maxResultSize(620, 620)	//Final image resolution will be less than 1080 x 1080(Optional)
                         .start(1);
@@ -100,13 +96,18 @@ public class Profile_data_Activity extends AppCompatActivity
             public void onClick(View view)
             {
 
+                int age1 = Integer.parseInt(age.getText().toString());
+
                 if(name.getText().toString().isEmpty())
                 {
                     Toast.makeText(Profile_data_Activity.this, "Name is empty", Toast.LENGTH_SHORT).show();
                 }
                 else if(age.getText().toString().isEmpty())
                 {
-                    Toast.makeText(Profile_data_Activity.this, "age is empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Profile_data_Activity.this, "age is empty or", Toast.LENGTH_SHORT).show();
+                } else if (age1 <18)
+                {
+                    Toast.makeText(Profile_data_Activity.this, "You must be above 18 years of age !!!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -181,7 +182,7 @@ public class Profile_data_Activity extends AppCompatActivity
                                         map.put("phone",user.getPhoneNumber());
                                         map.put("bio","Here your bio");/// have to change location
 
-                                        map.put("id_number",random);
+                                        map.put("id_number",""+random);
                                         map.put("gender",gen);
 
                                         map.put("progress_mex",0);

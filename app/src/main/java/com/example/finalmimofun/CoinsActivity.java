@@ -61,7 +61,7 @@ public class CoinsActivity extends AppCompatActivity
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference().child("user").child(user.getUid());
 
-         String.valueOf(databaseReference.child("coin").setValue(50000));
+      //   String.valueOf(databaseReference.child("coin").setValue(50000));
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {

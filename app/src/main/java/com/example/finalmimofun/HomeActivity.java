@@ -1,5 +1,6 @@
 package com.example.finalmimofun;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -17,13 +19,25 @@ import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.interfaces.ItemClickListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.zegocloud.uikit.prebuilt.liveaudioroom.ZegoUIKitPrebuiltLiveAudioRoomConfig;
+import com.zegocloud.uikit.prebuilt.liveaudioroom.ZegoUIKitPrebuiltLiveAudioRoomFragment;
+import com.zegocloud.uikit.prebuilt.liveaudioroom.core.ZegoLiveAudioRoomLayoutAlignment;
+import com.zegocloud.uikit.prebuilt.liveaudioroom.core.ZegoLiveAudioRoomLayoutRowConfig;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity
 {
@@ -45,15 +59,11 @@ public class HomeActivity extends AppCompatActivity
 
     private ImageSlider slider;
 
-    //for recialview start
-    RecyclerView recyclerView;
-    MainAdapter mainAdapter;
-    //for recialview end
-
-
-
     private FirebaseAuth auth;
     private FirebaseUser user;
+
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
 
     @Override
@@ -80,21 +90,8 @@ public class HomeActivity extends AppCompatActivity
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-
-        //for recialview faifbase connection start
-
-        recyclerView =(RecyclerView) findViewById(R.id.rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        FirebaseRecyclerOptions<MainModel> options =
-                new FirebaseRecyclerOptions.Builder<MainModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("user"), MainModel.class)
-                        .build();
-
-        mainAdapter=new MainAdapter(options);
-        recyclerView.setAdapter(mainAdapter);
-
-        //for recialview faifbase connection end
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference().child("user").child(user.getUid());
 
 
         //Image slider start
@@ -109,10 +106,16 @@ public class HomeActivity extends AppCompatActivity
         slideModels.add(new SlideModel(R.drawable.slide4,ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.slide5,ScaleTypes.FIT));
 
-
-
         slider.setImageList(slideModels,ScaleTypes.FIT);
 
+
+
+        slider.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemSelected(int i) {
+                golink("https://www.facebook.com/");
+            }
+        });
         //slider End
 
 
@@ -158,6 +161,7 @@ public class HomeActivity extends AppCompatActivity
         live_id.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(HomeActivity.this,LiveActivity.class));
             }
         });
@@ -206,6 +210,12 @@ public class HomeActivity extends AppCompatActivity
 
     }
 
+    private void golink(String s) {
+
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    }
+
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
@@ -238,17 +248,5 @@ public class HomeActivity extends AppCompatActivity
 
     }
 
-    //relative start
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mainAdapter.startListening();
-    }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mainAdapter.stopListening();
-    }
-    //relative end
 }

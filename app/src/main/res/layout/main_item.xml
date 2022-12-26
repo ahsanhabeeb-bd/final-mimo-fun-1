@@ -59,6 +59,18 @@
             android:layout_below="@id/coursetext"
             android:paddingLeft="5dp"
             />
+        <TextView
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mobil"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/emailtext"
+            android:paddingLeft="5dp"
+            />
 
 
 

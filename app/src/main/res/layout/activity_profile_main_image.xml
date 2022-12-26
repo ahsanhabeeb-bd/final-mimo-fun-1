@@ -22,14 +22,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
                 <ImageView
                     android:id="@+id/photomain1"
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
-                    android:src="@drawable/ladis4"
                     android:scaleType="fitXY"
+                    android:src="@drawable/profile_bg"
+                    android:layout_marginVertical="10dp"
                     />
-
 
                 <ImageView
                     android:id="@+id/edit"
@@ -39,7 +40,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/edit_profile1" />
+                    android:src="@drawable/edit_icon" />
 
                 <FrameLayout
                     android:layout_width="160dp"
@@ -52,7 +53,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ladis4"
+                        android:src="@drawable/profile_bg"
                         app:civ_border_color="#ECF1F1"
                         app:civ_border_width="2dp"
 
@@ -76,12 +77,12 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="190dp"
                     android:text="name"
-                    android:textColor="#E30C0C"
+                    android:textColor="#F6F1F1"
                     android:textSize="30dp"
                     android:textStyle="bold" />
 
                 <LinearLayout
-                    android:layout_width="170dp"
+                    android:layout_width="300dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="250dp"
@@ -104,8 +105,10 @@
                             android:id="@+id/age1"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:text="26" />
+                            android:layout_gravity="center_vertical"
+                            android:text="26"
+                            android:textColor="@color/white"
+                            />
 
 
                     </LinearLayout>
@@ -131,8 +134,10 @@
                             android:id="@+id/sending_level"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:text="10" />
+                            android:layout_gravity="center_vertical"
+                            android:text="10"
+                            android:textColor="@color/white"
+                            />
 
                     </LinearLayout>
 
@@ -140,7 +145,7 @@
                         android:layout_width="50dp"
                         android:layout_height="20dp"
                         android:layout_marginLeft="5dp"
-                        android:background="@drawable/label_back_3"
+                        android:background="@drawable/label_back_5"
                         android:orientation="horizontal">
 
                         <com.airbnb.lottie.LottieAnimationView
@@ -156,11 +161,28 @@
                             android:id="@+id/recevinging_lavel"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:text="26" />
+                            android:layout_gravity="center_vertical"
+                            android:text="26"
+                            android:textColor="@color/white"
+                            />
 
 
                     </LinearLayout>
+                    <TextView
+                        android:id="@+id/position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="main"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/label_back_6"
+                        android:paddingHorizontal="5dp"
+                        android:textColor="#15C7CD"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        />
+
+
+
 
 
                 </LinearLayout>
@@ -211,10 +233,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="agdlkggrlkmtekemlkmlkmb \n nlkglmblkbl sgbsfb"
-                android:textSize="15sp"
-                android:layout_marginLeft="5dp"
-                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="#383A3A"
                 android:layout_marginVertical="5dp"
+                android:textStyle="bold"
+
                 />
             <TextView
                 android:layout_width="match_parent"

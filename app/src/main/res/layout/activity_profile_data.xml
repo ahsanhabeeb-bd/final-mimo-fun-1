@@ -102,7 +102,6 @@
                         android:id="@+id/age"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:autofillHints="emailAddress"
                         android:background="@drawable/kasatom_linier"
                         android:gravity="center"
                         android:inputType="number"

@@ -1,19 +1,20 @@
 package com.example.finalmimofun;
 
+import android.widget.TextView;
+
 public class MainModel
 {
-    String name,age,email,picture;
+    String name,email,picture,phone,id_number;
 
-    MainModel()
-    {
-
+    public MainModel() {
     }
 
-    public MainModel(String name, String age, String email, String picture) {
+    public MainModel(String name, String email, String picture, String phone, String id_number) {
         this.name = name;
-        this.age = age;
         this.email = email;
         this.picture = picture;
+        this.phone = phone;
+        this.id_number = id_number;
     }
 
     public String getName() {
@@ -22,14 +23,6 @@ public class MainModel
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
     }
 
     public String getEmail() {
@@ -46,5 +39,21 @@ public class MainModel
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getId_number() {
+        return id_number;
+    }
+
+    public void setId_number(String id_number) {
+        this.id_number = id_number;
     }
 }

@@ -78,6 +78,9 @@ public class EditActivity extends AppCompatActivity
         edit_round_photo= (ImageView) findViewById(R.id.edit_round_photo) ;
         edit_main_photo= (ImageView) findViewById(R.id.edit_main_photo) ;
 
+     //   int age = Integer.parseInt(edit_age.getText().toString());
+
+
 
         auth= FirebaseAuth.getInstance();
         user =auth.getCurrentUser();
@@ -117,6 +120,7 @@ public class EditActivity extends AppCompatActivity
             public void onClick(View view) {
                 ImagePicker.with(EditActivity.this)
                         .crop()//Crop image(Optional), Check Customization for more option
+                        .cropSquare()
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
                         .maxResultSize(620, 620)	//Final image resolution will be less than 1080 x 1080(Optional)
                         .start(1);
@@ -142,11 +146,19 @@ public class EditActivity extends AppCompatActivity
                String age2 = String.valueOf(edit_age.getText());
                String bio2 = String.valueOf(edit_bio.getText());
 
-                databaseReference.child("name").setValue(name2);
-                databaseReference.child("age").setValue(age2);
-                databaseReference.child("bio").setValue(bio2);
-                Toast.makeText(EditActivity.this, "Success", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(EditActivity.this,Profile_main_image_Activity.class));
+                int age = Integer.parseInt(age2);
+                    if(age<18){
+                        Toast.makeText(EditActivity.this, "You must be above 18 years of age !!!", Toast.LENGTH_SHORT).show();
+                    }else if(age>17){
+                        databaseReference.child("age").setValue(age2);
+                        databaseReference.child("name").setValue(name2);
+                        //
+                        databaseReference.child("bio").setValue(bio2);
+                        Toast.makeText(EditActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EditActivity.this,Profile_main_image_Activity.class));
+                    }
+
+
             }
         });
 
@@ -209,5 +221,10 @@ public class EditActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(EditActivity.this,Profile_main_image_Activity.class));
+        super.onBackPressed();
+    }
 
 }
