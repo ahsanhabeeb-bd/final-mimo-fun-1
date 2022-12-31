@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/profile_bg" />
+                android:src="@drawable/camera" />
 
             <LinearLayout
                 android:layout_width="80dp"
@@ -77,7 +77,7 @@
                     android:layout_marginTop="60dp"
                     android:fontFamily="@font/amarante"
                     android:text="name"
-                    android:textColor="@color/white"
+                    android:textColor="#BBC8C6"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
