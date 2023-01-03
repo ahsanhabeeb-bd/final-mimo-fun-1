@@ -8,314 +8,671 @@
     tools:context=".Profile_main_image_Activity"
     android:orientation="vertical"
     >
-
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="match_parent"
         >
 
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/user_level_bg_2"
-            android:scaleType="fitXY"
-            />
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:orientation="vertical"
             >
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/photo_round"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/add_photo2"
-                app:civ_border_color="#ECF1F1"
-                app:civ_border_width="2dp"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sending Level"
+                android:layout_marginVertical="10dp"
+                android:gravity="center_horizontal"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:background="@drawable/label_back_3"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="5dp"
                 />
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="70dp"
-                android:src="@drawable/level_bg1"
-                android:scaleType="fitXY"
-                android:layout_gravity="bottom|center_horizontal"
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+
+                android:layout_marginVertical="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/user_level_bg_2"
+                    android:scaleType="fitXY"
+                    />
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/photo_round"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/add_photo2"
+                        app:civ_border_color="#ECF1F1"
+                        app:civ_border_width="2dp"
+                        />
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/level_bg1"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="bottom|center_horizontal"
+                        />
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="26dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="Lv. "
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:id="@+id/courent_level2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:layout_gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="#FFB700"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/arbutus"
+                            />
+
+
+                    </GridLayout>
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="20"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="50dp"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Lv."
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:layout_weight=".5"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/courent_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="1"
+                        android:textSize="15sp"
+                        android:gravity="left|center_vertical"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/custom_progress_bg"
+                        android:layout_weight="18"
+                        android:layout_gravity="center_vertical"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Lv."
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        />
+                    <TextView
+                        android:id="@+id/target_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="2"
+                        android:textSize="15sp"
+                        android:gravity="left|center_vertical"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/target_exp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="12241242000"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="need "
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/need_exp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="1"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        android:textColor="#FFB700"
+                        android:layout_gravity="center_vertical"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text=" EXP to upgrade "
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textColor="@color/white"
+
+
+                        />
+
+
+
+                </LinearLayout>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="80dp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/courent_exp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:gravity="center"
+                        android:text="0000"
+                        android:textColor="#FFB700"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text=" EXP"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textColor="@color/white"
+                        />
+
+                </GridLayout>
+
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receiving Level"
+                android:layout_marginVertical="10dp"
+                android:gravity="center_horizontal"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:background="@drawable/label_back_5"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="5dp"
                 />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/receiving_back"
+                    android:scaleType="fitXY"
+                    />
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/photo_round_receive"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/add_photo2"
+                        app:civ_border_color="#ECF1F1"
+                        app:civ_border_width="2dp"
+                        />
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/level_bg1"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="bottom|center_horizontal"
+                        />
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="26dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:text="Lv. "
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:id="@+id/courent_level2_receive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:layout_gravity="center_horizontal"
+                            android:text="1"
+                            android:textColor="#FFB700"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/arbutus"
+                            />
+
+
+                    </GridLayout>
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="20"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="50dp"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Lv."
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:layout_weight=".5"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/courent_level_receive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="1"
+                        android:textSize="15sp"
+                        android:gravity="left|center_vertical"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/progressbar_receive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/cousto_progress_bg_receive"
+                        android:layout_weight="18"
+                        android:layout_gravity="center_vertical"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Lv."
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        />
+                    <TextView
+                        android:id="@+id/target_level_receive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="2"
+                        android:textSize="15sp"
+                        android:gravity="left|center_vertical"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/target_exp_receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="12241242000"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="15dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="need "
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textColor="@color/white"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/need_exp_receive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="1"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical"
+                        android:textStyle="bold"
+                        android:textColor="#FFB700"
+                        android:layout_gravity="center_vertical"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text=" EXP to upgrade "
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textColor="@color/white"
+
+
+                        />
+
+
+
+                </LinearLayout>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="80dp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/courent_exp_receice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:gravity="center"
+                        android:text="0000"
+                        android:textColor="#FFB700"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text=" EXP"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:textColor="@color/white"
+                        />
+
+                </GridLayout>
+
+
+            </FrameLayout>
+
             <GridLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="26dp"
                 >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:text="Lv. "
-                    android:textSize="15sp"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:text="Diamond"
+                    android:textSize="20dp"
                     android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/black"
                     />
+
                 <TextView
-                    android:id="@+id/courent_level2"
+                    android:id="@+id/diamond"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="40dp"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:text="1230"
-                    android:textColor="#FFB700"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/arbutus"
+                    android:text="00"
+                    android:textSize="20dp" />
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                >
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:text="Coins"
+                    android:textSize="20dp"
+                    android:gravity="center"
                     />
+
+                <TextView
+                    android:id="@+id/coins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="20dp" />
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_gravity="center_horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+
+                    >
+                    <ImageView
+                        android:id="@+id/but100"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/heart_gift"
+                        />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="100"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+
+                    >
+                    <ImageView
+                        android:id="@+id/but500"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/cake_gift"
+                        />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="500"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+
+                    >
+                    <ImageView
+                        android:id="@+id/but1000"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/car_gift"
+                        />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="1000"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="5000dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+
+                    >
+                    <ImageView
+                        android:id="@+id/but5000"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/lion_gift"
+                        />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="5000"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+
+
 
 
             </GridLayout>
 
 
-        </FrameLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="20"
-            android:layout_marginHorizontal="10dp"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="50dp"
-
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="Lv."
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:textColor="@color/white"
-                android:layout_weight=".5"
-
-
-                />
-
-            <TextView
-                android:id="@+id/courent_level"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="123"
-                android:textSize="15sp"
-                android:gravity="left|center_vertical"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-
-                android:layout_gravity="center_vertical"
-                android:layout_weight=".5"
-                />
-
-            <ProgressBar
-                android:id="@+id/progressbar"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:progressDrawable="@drawable/custom_progress_bg"
-                android:layout_weight="18"
-                android:layout_gravity="center_vertical"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="Lv."
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                />
-            <TextView
-                android:id="@+id/target_level"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="223"
-                android:textSize="15sp"
-                android:gravity="left|center_vertical"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                />
         </LinearLayout>
-        <TextView
-            android:id="@+id/target_exp"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="12241242000"
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            android:visibility="gone"
-            />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="15dp"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="need "
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_gravity="bottom|center_horizontal"
-                android:textColor="@color/white"
-
-
-                />
-                <TextView
-                    android:id="@+id/need_exp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:text="223"
-                    android:textSize="15sp"
-                    android:gravity="center_vertical"
-                    android:textStyle="bold"
-                    android:textColor="#FFB700"
-                    android:layout_gravity="center_vertical"
-
-                    />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text=" EXP to upgrade "
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_gravity="bottom|center_horizontal"
-                android:textColor="@color/white"
-
-
-                />
+    </ScrollView>
 
 
 
-        </LinearLayout>
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="80dp"
-            >
 
-
-            <TextView
-                android:id="@+id/courent_exp"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:gravity="center"
-                android:text="1230"
-                android:textColor="#FFB700"
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text=" EXP"
-                android:textSize="15sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_gravity="bottom|center_horizontal"
-                android:textColor="@color/white"
-                />
-
-        </GridLayout>
-
-
-    </FrameLayout>
-
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        >
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:text="Diamond"
-            android:textSize="20dp"
-            android:gravity="center"
-            />
-
-        <TextView
-            android:id="@+id/diamond"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="12241242000"
-            android:textSize="20dp" />
-
-    </GridLayout>
-    <LinearLayout
-
-
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:orientation="vertical"
-        android:background="#EAF1F1"
-        >
-
-        <ImageView
-            android:id="@+id/gift_test"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/gift_heard"
-
-            />
-        <TextView
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="X100"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-
-
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:orientation="vertical"
-        android:background="#EAF1F1"
-        >
-        <ImageView
-            android:id="@+id/gift_test2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/star_in_profile"
-
-            />
-        <TextView
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="X5000"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal"
-            />
-
-    </LinearLayout>
 
 
 </LinearLayout>

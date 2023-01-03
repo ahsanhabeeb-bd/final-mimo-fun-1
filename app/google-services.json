@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "854357305556",
-    "firebase_url": "https://mimo-fun-default-rtdb.firebaseio.com",
-    "project_id": "mimo-fun",
-    "storage_bucket": "mimo-fun.appspot.com"
+    "project_number": "109030706013",
+    "firebase_url": "https://mimo-fun-ab0c0-default-rtdb.firebaseio.com",
+    "project_id": "mimo-fun-ab0c0",
+    "storage_bucket": "mimo-fun-ab0c0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:854357305556:android:024ef2a5feb9862f213341",
+        "mobilesdk_app_id": "1:109030706013:android:77b0c355092211195bb6b4",
         "android_client_info": {
-          "package_name": "com.manu.finalmimofun"
+          "package_name": "com.hklimited.mimofun"
         }
       },
       "oauth_client": [
         {
-          "client_id": "854357305556-hpsasei0bsjmg4cupgh8j8653vc9qfmt.apps.googleusercontent.com",
+          "client_id": "109030706013-s09q0bgmodpgi00hf4vji6hqhm0ev45n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBOb5AU7OtVlAYPfwTS54F57b5_mNspCiU"
+          "current_key": "AIzaSyBZqcQOW7D0rH_sem3pAcWOopFVhceHIEw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "854357305556-hpsasei0bsjmg4cupgh8j8653vc9qfmt.apps.googleusercontent.com",
+              "client_id": "109030706013-s09q0bgmodpgi00hf4vji6hqhm0ev45n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

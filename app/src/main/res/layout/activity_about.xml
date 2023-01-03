@@ -9,33 +9,12 @@
     android:orientation="vertical"
     >
 
-    <TextView
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="this is about page"
-        android:textSize="30sp"
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="this is about page"
-        android:textSize="30sp"
-        android:gravity="center"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="this is about page"
-        android:textSize="30sp"
-        android:gravity="center"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="this is about page"
-        android:textSize="30sp"
-        android:gravity="center"
-        />
+
 
 </LinearLayout>

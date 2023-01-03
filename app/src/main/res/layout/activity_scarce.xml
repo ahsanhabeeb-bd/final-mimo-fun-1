@@ -9,14 +9,7 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginVertical="20dp"
-        android:background="#E2E8E8"
-        android:layout_marginHorizontal="10dp"
-        >
+
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searce"
             android:layout_width="wrap_content"
@@ -25,8 +18,9 @@
             android:layout_marginRight="20dp"
             app:queryHint="Search ID ..."
             android:inputType="number"
+            android:layout_marginTop="20dp"
             />
-    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"

@@ -10,7 +10,7 @@
         android:id="@+id/img1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/ladis4"
+        android:src="@drawable/logo"
         android:layout_gravity="center_horizontal"
         />
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.manu.finalmimofun'
+    namespace 'com.hklimited.mimofun'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.manu.finalmimofun"
+        applicationId "com.hklimited.mimofun"
         minSdk 24
         targetSdk 32
         versionCode 1
@@ -62,6 +62,7 @@ dependencies {
     //image slider
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 
+
     //for lottie animation
     implementation 'com.airbnb.android:lottie:5.2.0'
     //for recilarview
@@ -75,7 +76,7 @@ dependencies {
     //for image crope
     implementation 'com.github.dhaval2404:imagepicker:2.1'
     //for pdf view
-   // implementation 'com.github.afreakyelf:Pdf-Viewer:1.0.7'
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
 
     //for live
     implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_live_audio_room_android:1.0.0'
@@ -83,7 +84,14 @@ dependencies {
     //for chat
   //  implementation 'com.github.ZEGOCLOUD.zego_inapp_chat_uikit_android:zimkit:1.2.0'
 
+    //color picker
 
+     implementation 'com.github.yukuku:ambilwarna:2.0.1'
+
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation('com.google.firebase:firebase-auth') {
+        exclude module: "play-services-safetynet"
+    }
 
 
 }

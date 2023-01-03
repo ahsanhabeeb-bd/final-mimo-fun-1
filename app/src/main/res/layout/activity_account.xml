@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
-        android:text="Your login ID is "
+        android:text="Your login ID "
         android:textSize="20sp"
         android:gravity="center"
         android:textColor="@color/black"

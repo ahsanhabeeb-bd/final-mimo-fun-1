@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/profile_bg"
+                    android:src="@drawable/logo"
                     android:layout_marginBottom="10dp"
                     />
 
@@ -53,7 +53,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/profile_bg"
+                        android:src="@drawable/logo"
                         app:civ_border_color="#ECF1F1"
                         app:civ_border_width="2dp"
 
@@ -77,9 +77,11 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="190dp"
                     android:text="name"
-                    android:textColor="#BBC8C6"
+                    android:textColor="#0C0C0C"
                     android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    />
 
                 <LinearLayout
                     android:layout_width="300dp"
@@ -106,8 +108,9 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center_vertical"
-                            android:text="26"
+                            android:text="00"
                             android:textColor="@color/white"
+                            android:gravity="center"
                             />
 
 
@@ -135,8 +138,9 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center_vertical"
-                            android:text="10"
+                            android:text="1"
                             android:textColor="@color/white"
+                            android:gravity="center"
                             />
 
                     </LinearLayout>
@@ -162,8 +166,9 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_gravity="center_vertical"
-                            android:text="26"
+                            android:text="1"
                             android:textColor="@color/white"
+                            android:gravity="center"
                             />
                     </LinearLayout>
                     <TextView
@@ -177,6 +182,8 @@
                         android:textColor="#15C7CD"
                         android:textStyle="bold"
                         android:visibility="gone"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
                         />
 
 
@@ -230,11 +237,12 @@
                 android:id="@+id/bio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="agdlkggrlkmtekemlkmlkmb \n nlkglmblkbl sgbsfb"
+                android:text="Bio"
                 android:textSize="20sp"
                 android:layout_marginHorizontal="10dp"
                 android:textColor="#383A3A"
-                android:layout_marginVertical="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:textStyle="bold"
 
                 />

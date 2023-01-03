@@ -78,6 +78,7 @@
                         android:textColor="@color/black"
                         android:textColorHint="@color/white"
                         android:textSize="20sp"
+                        android:singleLine="true"
 
 
                         />

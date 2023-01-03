@@ -9,7 +9,7 @@
         android:id="@+id/diglogimage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ladis4"
+        android:src="@drawable/logo"
 
         android:scaleType="fitXY"
         />

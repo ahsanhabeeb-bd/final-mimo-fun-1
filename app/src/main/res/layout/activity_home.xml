@@ -20,11 +20,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@drawable/home_top_bg_3"
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:columnCount="4"
+            android:background="@drawable/home_top_bg_3"
+
         >
 
 
@@ -88,21 +90,25 @@
 
         <ImageView
             android:id="@+id/scarse_id"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="120dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="15dp"
+
             android:src="@drawable/serch_icon_1" />
 
         <ImageView
             android:id="@+id/live_id"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="15dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="30dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/live_icon_1" />
+            android:src="@drawable/live_icon_1"
+            android:layout_marginLeft="10dp"
+            />
 
-    </LinearLayout>
+    </GridLayout>
 
 
         <LinearLayout
@@ -134,12 +140,9 @@
                                 android:id="@+id/slider"
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp"
-                                app:iss_period="1500"
                                 app:iss_auto_cycle="true"
-                                app:iss_delay="2000"
-                                app:iss_title_background="@color/white"
-                                app:iss_corner_radius="30"
-
+                                app:iss_period="1000"
+                                app:iss_delay="0"
                                 />
 
                         </LinearLayout>
@@ -172,13 +175,7 @@
 
 
     </LinearLayout>
-        <Button
-            android:id="@+id/logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="logout"
-            android:layout_gravity="center"
-            />
+
 
         <LinearLayout
         android:layout_width="match_parent"
