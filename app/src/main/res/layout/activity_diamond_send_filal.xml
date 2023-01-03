@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Diamond_send_filal_Activity"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/detal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sell Diamond"
+                android:textSize="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="10dp"
+                android:textStyle="bold"
+                android:textColor="#FB0707"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_centerVertical="true"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/black"
+                android:layout_gravity="center_horizontal"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:layout_marginVertical="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="Name"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+
+                    />
+                <TextView
+                    android:id="@+id/idnumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID"
+                    android:gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+
+                    />
+            </LinearLayout>
+
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginVertical="10dp"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diamonds"
+                    android:gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <TextView
+                    android:id="@+id/diamond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
+
+                    />
+
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/label_back_3"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                >
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="my Diamond"
+                        android:layout_gravity="left"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/mydiamond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20dp"
+                        android:textColor="#F10606"
+                        android:textStyle="bold"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Send "
+                        android:textSize="20sp"
+                        android:layout_margin="10dp"
+                        android:paddingHorizontal="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+
+                    <EditText
+                        android:id="@+id/senddiamond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="00"
+                        android:textSize="20sp"
+                        android:layout_margin="10dp"
+                        android:paddingHorizontal="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:inputType="number"
+                        />
+
+
+
+                </GridLayout>
+                <Button
+                    android:id="@+id/send_diamond_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="submit"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="#87D576"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

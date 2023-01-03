@@ -75,7 +75,7 @@ public class StreamerActivity extends AppCompatActivity {
                         }
                     });
                 }else if (diamond_seller==true){
-                    streamer.setText("diamond_seller");
+                    streamer.setText("diamond seller");
 
                     streamer.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -99,8 +99,6 @@ public class StreamerActivity extends AppCompatActivity {
                 }
 
 
-
-
             }
 
             @Override
@@ -108,6 +106,12 @@ public class StreamerActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(StreamerActivity.this,ProfileActivity.class));
+        super.onBackPressed();
     }
 
 
