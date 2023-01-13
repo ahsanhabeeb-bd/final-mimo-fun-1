@@ -69,6 +69,8 @@ public class HomeActivity extends AppCompatActivity
 
 
 
+
+
         home1 = findViewById(R.id.home1);
         game1 = findViewById(R.id.game1);
         chat1 = findViewById(R.id.chat1);

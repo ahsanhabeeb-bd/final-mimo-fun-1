@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -31,6 +32,9 @@ public class Login_mail_Activity extends AppCompatActivity {
     private Button registration;
     private FirebaseAuth auth;
     private FirebaseUser user;
+
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +50,9 @@ public class Login_mail_Activity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+        database=FirebaseDatabase.getInstance();
+        databaseReference=database.getReference();
+
 
         registration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,11 +86,7 @@ public class Login_mail_Activity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
-
     private void signin()
     {
         String email = mail.getText().toString();
@@ -95,30 +98,7 @@ public class Login_mail_Activity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
 
-
-                            FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid()).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    String loginvalu = String.valueOf(snapshot.getValue());
-
-                                    if (!loginvalu.equals("null")){
-                                        user.reload();
-                                        startActivity(new Intent(Login_mail_Activity.this,HomeActivity.class));
-                                        finish();
-
-                                    }else if(loginvalu.equals("null")){
-                                        user.reload();
-                                        startActivity(new Intent(Login_mail_Activity.this,Profile_data_Activity.class));
-                                        finish();
-
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });
+                            startActivity(new Intent(Login_mail_Activity.this,HomeActivity.class));
 
                         }else {
                             Toast.makeText(Login_mail_Activity.this, ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();

@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,14 +45,12 @@ public class Profile_data_Activity extends AppCompatActivity
     private RadioButton m_or_fe;
 
 
-
-
     private FirebaseAuth auth;
     private FirebaseUser user;
 
     final int min = 10000000;
     final int max = 99999999;
-
+//1669256456
     private StorageReference uploader;
 
 
@@ -94,25 +93,32 @@ public class Profile_data_Activity extends AppCompatActivity
             public void onClick(View view)
             {
 
-                int age1 = Integer.parseInt(age.getText().toString());
-
-                if(name.getText().toString().isEmpty())
+                if(TextUtils.isEmpty(name.getText().toString()))
                 {
                     Toast.makeText(Profile_data_Activity.this, "Name is empty", Toast.LENGTH_SHORT).show();
                 }
-                else if(age.getText().toString().isEmpty())
+                else if(TextUtils.isEmpty(age.getText().toString()))
                 {
-                    Toast.makeText(Profile_data_Activity.this, "age is empty or", Toast.LENGTH_SHORT).show();
-                } else if (age1 <18)
-                {
-                    Toast.makeText(Profile_data_Activity.this, "You must be above 18 years of age !!!", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    profile_data();
-                }
+                    Toast.makeText(Profile_data_Activity.this, "age is empty", Toast.LENGTH_SHORT).show();
 
+                }
+                else if (!(TextUtils.isEmpty(age.getText().toString())))
+                {       int age1 = Integer.parseInt(age.getText().toString());
 
+                    if(age1<18){
+                        Toast.makeText(Profile_data_Activity.this, "You must be above 18 years of age !!!", Toast.LENGTH_SHORT).show();
+                    }else
+                    {
+                        if (flag==0) {
+                            Toast.makeText(Profile_data_Activity.this, "Please upload an image", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            profile_data();
+                        }
+
+                    }
+
+                }
 
             }
         });
@@ -121,7 +127,7 @@ public class Profile_data_Activity extends AppCompatActivity
 
 
 
-
+int flag=0;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
@@ -135,6 +141,7 @@ public class Profile_data_Activity extends AppCompatActivity
                 InputStream inputStream =getContentResolver().openInputStream(filepath);
                 bitmap = BitmapFactory.decodeStream(inputStream);
                 photo.setImageBitmap(bitmap);
+                flag=1;
             }catch (Exception ex){
 
             }
@@ -165,12 +172,18 @@ public class Profile_data_Activity extends AppCompatActivity
                                         int seclected = gender.getCheckedRadioButtonId();
                                         m_or_fe = (RadioButton) findViewById(seclected);
                                         String gen = m_or_fe.getText().toString();
+                                        Long lo=System.currentTimeMillis()/100000;
+                                        String rannn=String.valueOf(lo);
 
 
                                         // make uid
 
                                         final int random = new Random().nextInt((max - min) + 1) + min;
 
+                                       // HashMap<String,Object> mapflag = new HashMap<>();
+
+                                      //  mapflag.put("uuid",user.getUid());
+                                       // root.child("user_flag").child(""+user.getUid()).setValue(mapflag);
 
 
                                         // have to make database object
@@ -180,7 +193,7 @@ public class Profile_data_Activity extends AppCompatActivity
                                         map.put("phone",user.getPhoneNumber());
                                         map.put("bio","Here your bio");/// have to change location
 
-                                        map.put("id_number",""+random);
+                                        map.put("id_number",""+rannn);
                                         map.put("gender",gen);
 
                                         map.put("uid",""+user.getUid());
@@ -276,6 +289,41 @@ public class Profile_data_Activity extends AppCompatActivity
                                         map.put("badge34",false);
                                         map.put("badge35",false);
                                         map.put("badge36",false);
+
+
+
+                                        map.put("frame1",false);
+                                        map.put("frame2",false);
+                                        map.put("frame3",false);
+                                        map.put("frame4",false);
+                                        map.put("frame5",false);
+                                        map.put("frame6",false);
+                                        map.put("frame7",false);
+                                        map.put("frame8",false);
+                                        map.put("frame9",false);
+                                        map.put("frame10",false);
+                                        map.put("frame11",false);
+                                        map.put("frame12",false);
+                                        map.put("frame13",false);
+                                        map.put("frame14",false);
+                                        map.put("frame15",false);
+                                        map.put("frame16",false);
+                                        map.put("frame17",false);
+                                        map.put("frame18",false);
+                                        map.put("frame19",false);
+                                        map.put("frame20",false);
+                                        map.put("frame21",false);
+                                        map.put("frame22",false);
+                                        map.put("frame23",false);
+                                        map.put("frame24",false);
+
+
+                                        map.put("version",3);
+
+
+
+
+
 
                                         map.put("picture",uri.toString());
                                         map.put("picturemain","https://www.google.com/search?q=nature+pictures&rlz=1C1ONGR_enBD1036BD1036&sxsrf=ALiCzsa2pxU9FJuMlBy_J8LJmrfba4dDXA:1672590065195&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjr-sLF46b8AhWgSGwGHegGAfUQ_AUoAXoECAEQAw&biw=1280&bih=569&dpr=1.5#imgrc=Ivq8_BScuZQyDM");

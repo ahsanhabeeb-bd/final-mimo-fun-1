@@ -28,6 +28,7 @@ public class Profile_main_image_Activity extends AppCompatActivity {
 
     private CircleImageView photo_round1;
     private ImageView photomain1;
+    private ImageView head_frame;
     private TextView name;
     private TextView age1;
     private TextView recevinging_lavel;
@@ -70,6 +71,7 @@ public class Profile_main_image_Activity extends AppCompatActivity {
         bio = (TextView)findViewById(R.id.bio);
         edit = (ImageView)findViewById(R.id.edit);
         gender = (ImageView)findViewById(R.id.gender);
+        head_frame = (ImageView)findViewById(R.id.head_frame);
 
 
 
@@ -208,7 +210,38 @@ public class Profile_main_image_Activity extends AppCompatActivity {
                 Boolean badge35 = (Boolean) snapshot.child("badge35").getValue();
                 Boolean badge36 = (Boolean) snapshot.child("badge36").getValue();
 
-                if (badge1.equals(true)){
+
+
+
+                Boolean frame1 = (Boolean) snapshot.child("frame1").getValue();
+                Boolean frame2 = (Boolean) snapshot.child("frame2").getValue();
+                Boolean frame3 = (Boolean) snapshot.child("frame3").getValue();
+                Boolean frame4 = (Boolean) snapshot.child("frame4").getValue();
+                Boolean frame5 = (Boolean) snapshot.child("frame5").getValue();
+                Boolean frame6 = (Boolean) snapshot.child("frame6").getValue();
+                Boolean frame7 = (Boolean) snapshot.child("frame7").getValue();
+                Boolean frame8 = (Boolean) snapshot.child("frame8").getValue();
+                Boolean frame9 = (Boolean) snapshot.child("frame9").getValue();
+                Boolean frame10 = (Boolean) snapshot.child("frame10").getValue();
+                Boolean frame11 = (Boolean) snapshot.child("frame11").getValue();
+                Boolean frame12 = (Boolean) snapshot.child("frame12").getValue();
+                Boolean frame13 = (Boolean) snapshot.child("frame13").getValue();
+                Boolean frame14 = (Boolean) snapshot.child("frame14").getValue();
+                Boolean frame15 = (Boolean) snapshot.child("frame15").getValue();
+                Boolean frame16 = (Boolean) snapshot.child("frame16").getValue();
+                Boolean frame17 = (Boolean) snapshot.child("frame17").getValue();
+                Boolean frame18 = (Boolean) snapshot.child("frame18").getValue();
+                Boolean frame19 = (Boolean) snapshot.child("frame19").getValue();
+                Boolean frame20 = (Boolean) snapshot.child("frame20").getValue();
+                Boolean frame21 = (Boolean) snapshot.child("frame21").getValue();
+                Boolean frame22 = (Boolean) snapshot.child("frame22").getValue();
+                Boolean frame23 = (Boolean) snapshot.child("frame23").getValue();
+                Boolean frame24 = (Boolean) snapshot.child("frame24").getValue();
+
+
+
+
+                if (badge1 == true){
                     data.add(R.drawable.badge1);
                     data1.add(R.drawable.popup1);}
                 if (badge2 == true)
@@ -316,6 +349,108 @@ public class Profile_main_image_Activity extends AppCompatActivity {
                 if (badge36 == true)
                 {data.add(R.drawable.badge36);
                     data1.add(R.drawable.popup36);}
+
+
+                if (frame1 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_1).into(head_frame);
+                }
+                else if (frame2 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_2).into(head_frame);
+                }
+                else if (frame3 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_3).into(head_frame);
+                }
+                else if (frame4 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_4).into(head_frame);
+                }
+                else if (frame5 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_5).into(head_frame);
+                }
+                else if (frame6 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_6).into(head_frame);
+                }
+                else if (frame7 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_7).into(head_frame);
+                }
+                else if (frame8 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_8).into(head_frame);
+                }
+                else if (frame9 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_9).into(head_frame);
+                }
+                else if (frame10 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_10).into(head_frame);
+                }
+                else if (frame11 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_11).into(head_frame);
+                }
+                else if (frame12 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_12).into(head_frame);
+                }
+                else if (frame13 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_13).into(head_frame);
+                }
+                else if (frame14 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_14).into(head_frame);
+                }
+                else if (frame15 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_15).into(head_frame);
+                }
+                else if (frame16 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_16).into(head_frame);
+                }
+                else if (frame17 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_17).into(head_frame);
+                }
+                else if (frame18 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_18).into(head_frame);
+                }
+                else if (frame19 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_19).into(head_frame);
+                }
+                else if (frame20 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_20).into(head_frame);
+                }
+                else if (frame21 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_21).into(head_frame);
+                }
+                else if (frame22 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_22).into(head_frame);
+                }
+                else if (frame23 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_23).into(head_frame);
+                }
+                else if (frame24 == true){
+                    head_frame.setVisibility(View.VISIBLE);
+                    Picasso.get().load(R.drawable.frame_24).into(head_frame);
+                }
+
+
+
+
             }
 
             @Override

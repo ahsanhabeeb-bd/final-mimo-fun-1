@@ -95,8 +95,6 @@
                     android:layout_marginTop="30dp"
                     android:hint="Age"
                     android:textColorHint="@color/black"
-
-
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -109,8 +107,7 @@
                         android:textColor="@color/black"
                         android:textColorHint="@color/white"
                         android:textSize="20sp"
-
-
+                        android:singleLine="true"
                         />
 
 

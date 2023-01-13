@@ -4,6 +4,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\This pc\\Desktop\\mimo fun play consol\\path key.jks')
+            storePassword '01914@#AHSAN@#habib'
+            keyAlias 'key0'
+            keyPassword '01914@#AHSAN@#habib'
+        }
+    }
     namespace 'com.hklimited.mimofun'
     compileSdk 32
 
@@ -11,8 +19,8 @@ android {
         applicationId "com.hklimited.mimofun"
         minSdk 24
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 6
+        versionName "1.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,6 +31,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -88,10 +97,19 @@ dependencies {
 
      implementation 'com.github.yukuku:ambilwarna:2.0.1'
 
+
+
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
     implementation('com.google.firebase:firebase-auth') {
         exclude module: "play-services-safetynet"
     }
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-appcheck-playintegrity'
+
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+
+    implementation 'com.github.yyued:SVGAPlayer-Android:2.6.1'
 
 
 }

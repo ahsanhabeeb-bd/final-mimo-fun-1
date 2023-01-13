@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".Details"
     android:orientation="vertical"
+    android:weightSum="10"
     >
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="9"
 
         >
         <LinearLayout
@@ -54,12 +56,14 @@
                         />
 
                     <ImageView
+                        android:id="@+id/head_frame"
                         android:layout_width="130dp"
                         android:layout_height="130dp"
                         android:layout_gravity="center"
                         android:scaleType="fitXY"
-                        android:src="@drawable/pngwing_1"
-                        android:visibility="visible" />
+                        android:src="@drawable/frame_test"
+                        android:visibility="gone"
+                        />
                 </FrameLayout>
 
 
@@ -275,14 +279,11 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 />
-            <TextView
-                android:id="@+id/test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                />
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+
 
 </LinearLayout>

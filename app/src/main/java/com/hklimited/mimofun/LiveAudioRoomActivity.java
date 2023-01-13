@@ -8,6 +8,7 @@ import com.zegocloud.uikit.prebuilt.liveaudioroom.ZegoUIKitPrebuiltLiveAudioRoom
 import com.zegocloud.uikit.prebuilt.liveaudioroom.ZegoUIKitPrebuiltLiveAudioRoomFragment;
 import com.zegocloud.uikit.prebuilt.liveaudioroom.core.ZegoLiveAudioRoomLayoutAlignment;
 import com.zegocloud.uikit.prebuilt.liveaudioroom.core.ZegoLiveAudioRoomLayoutRowConfig;
+import com.zegocloud.uikit.prebuilt.liveaudioroom.core.ZegoMenuBarButtonName;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -47,8 +48,16 @@ public class LiveAudioRoomActivity extends AppCompatActivity {
 
         config.seatConfig.showSoundWaveInAudioMode = true;
 
+        config.bottomMenuBarConfig.hostButtons = Arrays.asList(ZegoMenuBarButtonName.TOGGLE_MICROPHONE_BUTTON, ZegoMenuBarButtonName.SHOW_MEMBER_LIST_BUTTON);
+        config.bottomMenuBarConfig.speakerButtons = Arrays.asList(ZegoMenuBarButtonName.TOGGLE_MICROPHONE_BUTTON, ZegoMenuBarButtonName.SHOW_MEMBER_LIST_BUTTON);
+        config.bottomMenuBarConfig.audienceButtons = Arrays.asList(ZegoMenuBarButtonName.SHOW_MEMBER_LIST_BUTTON);
+
+
+
         ZegoUIKitPrebuiltLiveAudioRoomFragment fragment = ZegoUIKitPrebuiltLiveAudioRoomFragment.newInstance(appID,
                 appSign, userID, userName, roomID, config);
+
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commitNow();
 

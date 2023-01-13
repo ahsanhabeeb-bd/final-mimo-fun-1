@@ -27,10 +27,9 @@
                     android:id="@+id/photomain1"
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/logo"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo" />
 
                 <ImageView
                     android:id="@+id/edit"
@@ -61,12 +60,14 @@
                         />
 
                     <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:id="@+id/head_frame"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:layout_gravity="center"
                         android:scaleType="fitXY"
-                        android:src="@drawable/pngwing_1"
-                        android:visibility="visible" />
+                        android:src="@drawable/frame_test"
+                        android:visibility="gone"
+                        />
                 </FrameLayout>
 
 
@@ -262,7 +263,6 @@
                 android:layout_height="200dp"
 
                 android:layout_gravity="center_horizontal"
-
 
                 >
 

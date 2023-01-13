@@ -12,7 +12,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseException;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
@@ -29,6 +32,8 @@ public class Log_phone_Activity extends AppCompatActivity {
     private CountryCodePicker textView3;
     private Button btnSend;
     private ProgressBar progressBar;
+
+    private FirebaseAppCheck firebaseAppCheck;
 
 
 
@@ -47,6 +52,15 @@ public class Log_phone_Activity extends AppCompatActivity {
         etPhone= findViewById(R.id.etPhone);
         btnSend= findViewById(R.id.btnSend);
         progressBar= findViewById(R.id.progressBar);
+
+
+        FirebaseApp.initializeApp(Log_phone_Activity.this);
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(
+                PlayIntegrityAppCheckProviderFactory.getInstance());FirebaseApp.initializeApp(Log_phone_Activity.this);
+        firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(
+                PlayIntegrityAppCheckProviderFactory.getInstance());
 
         mAuth = FirebaseAuth.getInstance();
 
